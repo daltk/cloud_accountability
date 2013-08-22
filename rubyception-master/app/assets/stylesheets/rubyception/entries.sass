@@ -1,0 +1,143 @@
+body
+  :width 100%
+.entry
+  :position relative
+  :-webkit-box-shadow rgba(255, 255, 255, 0.07) 0px 1px 0
+  :-moz-box-shadow    rgba(255, 255, 255, 0.07) 0px 1px 0
+  :box-shadow         rgba(255, 255, 255, 0.07) 0px 1px 0
+  :border
+    :bottom 1px solid rgb(18, 18, 18)
+  :font-size 14px
+  :color rgb(195,195,195)
+  :margin
+    :bottom 1px
+  .marker
+    :position absolute
+    :height 100%
+    :float left
+    :width 3px
+    :-webkit-border-radius 3px
+    :-moz-border-radius    3px
+    :border-radius         3px
+    :margin
+      :right 5px
+  .marker.good
+    :background rgb(50,250,100)
+  .marker.warning
+    :background rgb(250,250,100)
+  .marker.error
+    :background rgb(250,50,0)
+  .details
+    :padding 0 10px
+    .method
+      :width 70px
+    .controller
+      :width 200px
+    .format
+      :width 50px
+    .datetime
+      :width 70px
+    .ms
+      :width 80px
+    .method, .format
+      :text-transform uppercase
+    .heading_wrapper
+      :padding 10px 0 10px 0
+    .heading
+      :overflow auto
+      :table-layout fixed
+      :border-collapse collapse
+      :width 100%
+      td
+        :padding-right 5px
+        :white-space nowrap
+        :overflow hidden
+        :text-overflow ellipsis
+      td:last-child
+        :padding-right 0
+      .ms, .datetime
+        :margin
+          :left 10px
+      .ms.slow
+        :color rgb(250,50,0)
+      .ms.normal
+        :color rgb(250,250,100)
+      .ms.fast
+        :color rgb(50,250,100)
+      .datetime
+        :color rgb(120,120,120)
+  .lines, .backtrace_lines, .params
+    :display none
+  &.ignore
+    :display none
+  &.selected
+    :background rgb(55,55,55)
+  &.open
+    .lines, .backtrace_lines, .params
+      :display block
+    :padding-bottom 10px
+.position_marker
+  :background rgb(255,0,0)
+  :height 2px
+  :margin 2px 0
+
+.params, .nested_params
+  :padding 5px
+    :top 0px
+  :font-size 12px
+  .key
+    :color rgb(160,160,160)
+  .value
+    :margin
+      :left 5px
+      :right 10px
+  .string
+    :color rgb(0,200,100)
+  .number
+    :color rgb(0,100,200)
+  .boolean
+    :color rgb(200,200,0)
+
+
+body.pretty_params
+  .open
+    .params
+      .param
+        :display block
+      //:display table
+      //:border-collapse collapse
+      //:border none
+      //.param
+        //:display table-row
+        //span
+          //:display table-cell
+        //.key, .colon
+          //:width 1%
+.params
+  .nested
+    :display none
+  a.toggle_params
+    :display block
+    :float left
+    :width 15px
+    :height 15px
+    :background image-url('rubyception/entry_collapse.png') no-repeat center center
+
+.params.nested
+  a.toggle_params
+    :background image-url('rubyception/entry_expand.png') no-repeat center center
+  .basic
+    :display none
+  .nested
+    :display block
+.nested
+  :clear both
+dt
+  :clear both
+  :margin-right 10px
+  :text-align right
+  :width 120px
+  :word-wrap break-word
+dt, dd
+  :float left
+
