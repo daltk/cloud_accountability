@@ -1,4 +1,9 @@
-cloud_accountability
-====================
+## Running the Redis server
 
-Distributed Accountability for File Sharing in Cloud
+Start REDIS using : redis-server /usr/local/etc/redis.conf
+
+# Start Rails app
+
+# Start fnord app
+
+
